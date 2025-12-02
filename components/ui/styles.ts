@@ -3,33 +3,60 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    padding: 16,
+    backgroundColor: "#1A0008",
+    padding: 20,
+    justifyContent: "flex-end",
   },
+
   displayContainer: {
-    height: 100,
-    justifyContent: "center",
+    minHeight: 120,
+    justifyContent: "flex-end",
     alignItems: "flex-end",
-    marginBottom: 16,
+    marginBottom: 25,
+    paddingRight: 10,
   },
+
   displayText: {
-    fontSize: 48,
+    fontSize: 60,
+    color: "white",
+    fontWeight: "200",
   },
+
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 8,
+    marginBottom: 18,
   },
+
   button: {
     flex: 1,
-    margin: 4,
-    height: 60,
+    marginHorizontal: 6,
+    height: 75,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#eee",
-    borderRadius: 8,
+
+    backgroundColor: "#FF5C8A",
+    borderRadius: 40,
+
+    shadowColor: "#FF1E56",
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.35,
+    shadowRadius: 10,
+
+    elevation: 8,
   },
+
   buttonText: {
-    fontSize: 24,
+    fontSize: 28,
+    color: "white",
+    fontWeight: "600",
+  },
+
+  operatorButton: {
+    backgroundColor: "#FF1E56",
+  },
+
+  secondaryButton: {
+    backgroundColor: "#FF8FB1",
   },
 });

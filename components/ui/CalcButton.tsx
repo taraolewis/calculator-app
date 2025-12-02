@@ -1,15 +1,26 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, ViewStyle } from "react-native";
 import { styles } from "./styles";
 
-export default function CalcButton({ label, onPress, style }: any) {
+interface CalcButtonProps {
+  label: string;
+  onPress: () => void;
+  style?: ViewStyle | ViewStyle[];
+}
+
+export default function CalcButton({ label, onPress, style }: CalcButtonProps) {
+  const isOperator = ["÷", "×", "−", "+", "="].includes(label);
+  const isSecondary = ["C", "⌫", "%"].includes(label);
+
+  const buttonStyle = [
+    styles.button,
+    isOperator && styles.operatorButton,
+    isSecondary && styles.secondaryButton,
+    style,
+  ];
+
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={[styles.button, style]}
-      accessibilityRole="button"
-      accessibilityLabel={`Button ${label}`}
-    >
+    <TouchableOpacity style={buttonStyle} onPress={onPress}>
       <Text style={styles.buttonText}>{label}</Text>
     </TouchableOpacity>
   );
